@@ -9,5 +9,5 @@ export const environment = {
     messagingSenderId: '508264880415',
   },
   production: true,
-  apiBaseUrl: 'https://backend-springboot-ecelayes.herokuapp.com/'
+  apiBaseUrl: 'https://ap-backend-springboot.onrender.com/'
 };
