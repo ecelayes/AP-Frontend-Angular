@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "ecelayes-portfolio"
+  },
+  "targets": {
+    "portfolio-frontend-angular": {
+      "hosting": {
+        "FrontEnd-Angular": [
+          "ecelayes-portfolio"
+        ]
+      }
+    }
+  }
+}

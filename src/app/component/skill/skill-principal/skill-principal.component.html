@@ -1,0 +1,37 @@
+<div class="row" id="skill-component">
+    <div id="title">
+        <h1 class="title align-items">Habilidades</h1>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-secondary" routerLink="/newSkill" *ngIf="isLogged">
+                <i class="bi bi-plus-square"> Agregar</i>
+            </button>
+        </div>
+    </div>
+    <div class="card" style="max-width: 20rem" *ngFor="let skill of skill">
+        <div>
+            <circle-progress
+                [percent]="skill.percentage"
+                [radius]="35"
+                [space]="-10"
+                [outerStrokeGradient]="true"
+                [outerStrokeWidth]="10"
+                [outerStrokeColor]="'#6a11cb'"
+                [outerStrokeGradientStopColor]="'#2575fc'"
+                [innerStrokeColor]="'#e7e8ea'"
+                [innerStrokeWidth]="10"
+                [imageSrc]="skill.dirIcon"
+                [showImage]="true"
+                [imageHeight]="30"
+                [imageWidth]="30"
+                [animationDuration]="1000"
+                [showUnits]="false"
+                [showBackground]="false"
+                [responsive]="true"
+            ></circle-progress>
+        </div>
+        <div *ngIf="isLogged">
+            <button type="button" class="btn btn-primary" routerLink="/editSkill/{{skill.id}}"><i class="bi bi-pencil-square"> Editar</i></button>
+            <button type="button" class="btn btn-danger"><i class="bi bi-trash" (click)="onDeleteSkill(skill.id)"> Eliminar</i></button>
+        </div>
+    </div>
+</div>

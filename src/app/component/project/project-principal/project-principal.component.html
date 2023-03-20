@@ -1,0 +1,25 @@
+<div class="row" id="project-component">
+    <div id="title">
+        <h1 class="title align-items">Proyectos</h1>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-secondary" routerLink="/newProject" *ngIf="isLogged">
+                <i class="bi bi-plus-square"> Agregar</i>  
+            </button>
+        </div>
+    </div>
+    <div class="card" style="max-width: 20rem" *ngFor="let project of project">
+        <div class="header">
+            <img src="{{project.dirImage}}" class="image-fluid" id="project-image">
+            <h1>{{project.nameProject}}</h1>
+        </div>
+        <div class="body">
+            <h5>{{project.startDate}} - {{project.endDate}}</h5>
+            <p>{{project.description}}</p>
+            <a href="{{project.link}}" target="_blank" rel="noopener noreferrer" id="link">Link al proyecto</a>
+        </div>
+        <div *ngIf="isLogged">
+            <button type="button" class="btn btn-primary" routerLink="/editProject/{{project.id}}"><i class="bi bi-pencil-square"> Editar</i></button>
+            <button type="button" class="btn btn-danger"><i class="bi bi-trash" (click)="onDeleteProject(project.id)"> Eliminar</i></button>
+        </div>
+    </div>
+</div>

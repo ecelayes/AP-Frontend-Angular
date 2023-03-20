@@ -1,0 +1,25 @@
+<div class="row" id="education-component">
+    <div id="title">
+        <h1 class="title align-items">Educacion</h1>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-secondary" routerLink="/newEducation" *ngIf="isLogged">
+                <i class="bi bi-plus-square"> Agregar</i>  
+            </button>
+        </div>
+    </div>
+    <div class="card" style="max-width: 20rem;" *ngFor="let education of education">
+        <div class="header">
+            <img class="img-thumbnail rounded" src="{{education.dirIcon}}" class="image-fluid" id="logo">
+            <h2>{{education.institution}}</h2>
+        </div>
+        <div class="body">
+            <h3>{{education.degree}}</h3>
+            <h4>{{education.career}}</h4>
+            <h5>{{education.startDate}} - {{education.endDate}}</h5>
+        </div>
+        <div *ngIf="isLogged">
+            <button type="button" class="btn btn-primary" routerLink="/editEducation/{{education.id}}"><i class="bi bi-pencil-square"> Editar</i></button>
+            <button type="button" class="btn btn-danger"><i class="bi bi-trash" (click)="onDeleteEducation(education.id)"> Eliminar</i></button>
+        </div>
+    </div>
+</div>

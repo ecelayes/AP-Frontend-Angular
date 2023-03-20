@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    background-size: 400%, 400%;
+    animation: animate-background 10s infinite ease-in-out;
+}
+
+.title{
+    font-family: 'Fredericka the Great', cursive;
+    position:static;
+}
+
+.button{
+    font-family: 'Quicksand', sans-serif;
+    margin: 20px;
+}
+
+p, h2, h3, h4, h5{
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bolder;
+}
+
+@keyframes animate-background{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}

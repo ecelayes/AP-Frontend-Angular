@@ -1,0 +1,25 @@
+<div class="row" id="experience-component">
+    <div id="title">
+        <h1 class="title align-items">Experiencia laboral</h1>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-secondary" routerLink="/newExperience" *ngIf="isLogged">
+                <i class="bi bi-plus-square"> Agregar</i>  
+            </button>
+        </div>
+    </div>
+    <div class="card" style="max-width: 20rem" *ngFor="let experience of experience">
+        <div class="header">
+            <img class="img-thumbnail rounded" src="{{experience.dirIcon}}" class="image-fluid" id="logo">
+            <h1>{{experience.company}}</h1>
+        </div>
+        <div class="body">
+            <h3>{{experience.position}}</h3>
+            <h5>{{experience.startDate}} - {{experience.endDate}}</h5>
+            <p>{{experience.description}}</p>
+        </div>
+        <div *ngIf="isLogged">
+            <button type="button" class="btn btn-primary" routerLink="/editExperience/{{experience.id}}"><i class="bi bi-pencil-square"> Editar</i></button>
+            <button type="button" class="btn btn-danger"><i class="bi bi-trash" (click)="onDeleteExperience(experience.id)"> Eliminar</i></button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+#project-component{
+    background-color: white;
+    text-align: center;
+    padding: 1.75em;
+}
+
+.card{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1em;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 10px;
+}
+
+#project-image{
+    width: 7em;
+    height: 7em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+}
+
+.body{
+    margin-bottom: 1em;
+}

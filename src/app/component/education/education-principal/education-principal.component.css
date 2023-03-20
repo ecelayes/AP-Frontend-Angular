@@ -1,0 +1,26 @@
+#education-component{
+    color: white;
+    text-align: center;
+    padding: 1.75em;
+}
+
+#logo{
+    width: 7em;
+    height: 7em;
+    margin-top: -3em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+}
+
+.card{
+    margin-top: 3em;
+    margin-bottom: 1em;
+    margin-right: auto;
+    margin-left: auto;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 10px;
+}

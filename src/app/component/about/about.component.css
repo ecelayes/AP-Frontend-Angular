@@ -1,0 +1,12 @@
+#about-component{
+    background-color: white;
+    text-align: center;
+    padding: 1.75em;
+}
+
+#perfil{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit: cover;
+}
