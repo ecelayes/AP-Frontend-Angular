@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Project } from 'src/app/model/project.model';
 import { ProjectService } from 'src/app/service/project.service';
+import { ImageService } from 'src/app/service/image.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,7 +14,11 @@ export class ProjectEditComponent implements OnInit {
 
   project: Project = null;
 
-  constructor(private projectService: ProjectService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private projectService: ProjectService, 
+    private router: Router, 
+    private activatedRoute: ActivatedRoute,
+    public imageService: ImageService) { }
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
@@ -33,6 +38,7 @@ export class ProjectEditComponent implements OnInit {
 
   onUpdateProject():void {
     const id = this.activatedRoute.snapshot.params['id'];
+    this.project.dirImage = this.imageService.url;
     this.projectService.updateProject(id, this.project).subscribe(
       data => {
         Swal.fire({
@@ -54,6 +60,12 @@ export class ProjectEditComponent implements OnInit {
 
   back(){
     this.router.navigate(['/'])
+  }
+
+  uploadImage($event: any) {
+    const id = this.activatedRoute.snapshot.params['id'];
+    const name = "proyecto_" + id;
+    this.imageService.uploadImage($event, name);
   }
 
 }

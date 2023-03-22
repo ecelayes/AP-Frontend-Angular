@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Skill } from 'src/app/model/skill.model';
 import { SkillService } from 'src/app/service/skill.service';
+import { ImageService } from 'src/app/service/image.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,7 +14,11 @@ export class SkillEditComponent implements OnInit {
 
   skill: Skill = null;
 
-  constructor(private skillService: SkillService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private skillService: SkillService, 
+    private router: Router, 
+    private activatedRoute: ActivatedRoute,
+    public imageService: ImageService) { }
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
@@ -33,6 +38,7 @@ export class SkillEditComponent implements OnInit {
 
   onUpdateSkill():void {
     const id = this.activatedRoute.snapshot.params['id'];
+    this.skill.dirIcon = this.imageService.url;
     this.skillService.updateSkill(id, this.skill).subscribe(
       data => {
         Swal.fire({
@@ -56,4 +62,9 @@ export class SkillEditComponent implements OnInit {
     this.router.navigate(['/'])
   }
 
+  uploadImage($event: any) {
+    const id = this.activatedRoute.snapshot.params['id'];
+    const name = "habilidad_" + id;
+    this.imageService.uploadImage($event, name);
+  }
 }

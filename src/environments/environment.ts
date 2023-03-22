@@ -4,13 +4,13 @@
 
 export const environment = {
   firebase: {
-    projectId: 'portfolio-frontend-angular',
-    appId: '1:508264880415:web:4d3237d94743b2d9c0b82a',
-    storageBucket: 'portfolio-frontend-angular.appspot.com',
+    projectId: 'ecelayes-portfolio',
+    appId: '1:1036099516826:web:90ca4bef03fa2a0f162223',
+    storageBucket: 'ecelayes-portfolio.appspot.com',
     locationId: 'southamerica-east1',
-    apiKey: 'AIzaSyCPu-G9uD9MgFPvqJ9NWC0gF7kcyuNWpUQ',
-    authDomain: 'portfolio-frontend-angular.firebaseapp.com',
-    messagingSenderId: '508264880415',
+    apiKey: 'AIzaSyC6eXabS-y-AUS1Fdn9TtcK81lLrPiH8mc',
+    authDomain: 'ecelayes-portfolio.firebaseapp.com',
+    messagingSenderId: '1036099516826',
   },
   production: true,
   apiBaseUrl: 'https://ap-backend-springboot.onrender.com/'

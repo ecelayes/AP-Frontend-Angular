@@ -3,6 +3,8 @@ body{
     background: linear-gradient(to right, #2575fc, #6a11cb);
     background-size: 400%, 400%;
     animation: animate-background 10s infinite ease-in-out;
+    top: 0;
+    left: 0;
 }
 
 .title{

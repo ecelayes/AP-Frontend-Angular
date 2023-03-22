@@ -77,27 +77,31 @@
                         [(ngModel)] = "person.description"
                         required
                     />
-                    <label class="form-label" for="description">Breve descipcion sobre mi</label>
+                    <label class="form-label" for="description">Breve descripción sobre mi</label>
                 </div>
                 <div class="form-outline mb-4">
                     <input 
-                        type = "string"
+                        type = "file"
                         id = "dirPhoto"
                         name = "dirPhoto"
                         class="form-control"
                         [(ngModel)] = "person.dirPhoto"
                         required
+                        (change)="uploadPhoto($event)"
+                        accept=".jpg, .jpeg, .png"
                     />
                     <label class="form-label" for="dirPhoto">Foto Perfil</label>
                 </div>
                 <div class="form-outline mb-4">
                     <input 
-                        type = "string"
+                        type = "file"
                         id = "dirBanner"
                         name = "dirBanner"
                         class="form-control"
                         [(ngModel)] = "person.dirBanner"
                         required
+                        (change)="uploadBanner($event)"
+                        accept=".jpg, .jpeg, .png, .svg"
                     />
                     <label class="form-label" for="dirBanner">Foto Banner</label>
                 </div>
