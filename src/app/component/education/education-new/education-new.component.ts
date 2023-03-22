@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Education } from 'src/app/model/education.model';
 import { EducationService } from 'src/app/service/education.service';
+import { ImageService } from 'src/app/service/image.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -18,7 +19,11 @@ export class EducationNewComponent implements OnInit {
   endDate!: string;
   dirIcon!: string;
 
-  constructor(private educationService: EducationService, private router: Router) { }
+  constructor(
+    private educationService: EducationService, 
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    public imageService: ImageService) { }
 
   ngOnInit(): void {}
 
@@ -28,7 +33,7 @@ export class EducationNewComponent implements OnInit {
                                     this.career, 
                                     this.startDate, 
                                     this.endDate,
-                                    this.dirIcon);
+                                    this.dirIcon = this.imageService.url);
     console.log(education);
     this.educationService.saveEducation(education).subscribe(data=>{
       Swal.fire({
@@ -51,4 +56,9 @@ export class EducationNewComponent implements OnInit {
     this.router.navigate(['/'])
   }
 
+  uploadImage($event: any) {
+    const id = this.activatedRoute.snapshot.params['id'];
+    const name = "educacion_" + id;
+    this.imageService.uploadImage($event, name);
+  }
 }
